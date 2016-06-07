@@ -1,17 +1,13 @@
-const a = null;
 'use strict';
 
 const constants = require('./constants.js');
 const helper = require('./helper.js');
 const rank = require('./rank.js');
-const math = require('mathjs');
 
 const setOfZeroDiffs = [];
 const setOfNonZeroDiffs = [];
 
-//const initP = [0,'a1',1,0];
-//const initC = ['a1',[['a1', 5]],0,0];
-const initP = ['a1', 'a1', 0, 'a1', 0, 0, 0, 0, 'a1', 0, 0, 'a1', 0, 0, 0, 'a1'];
+const initP = ['a1', 'a1', 'a2', 'a1', 0, 0, 0, 0, 'a1', 0, 0, 'a1', 0, 'a1', 0, 'a2'];
 const initC = ['b1', 0, 'b1', 0, 0, 0, 0, 'b1', 0, 0, 0, 'b1', 0, 0, 0, 'b1'];
 
 init(initP, initC);
@@ -42,6 +38,7 @@ function init(deltaP, deltaC) {
 
     }
 
+    debugger;
     rank(Bshtrih);
 }   
 
@@ -57,7 +54,9 @@ function initMatrixB(vectorX) {
                 return typeof item == 'number' ? item : 0;
             });
 
-            return math.multiply(tempVectorToMul, A[i]);
+            throw new Error('multiply primitives');
+
+            //return math.multiply(tempVectorToMul, A[i]);
         } else {
             return helper.buildAlphaItem(vectorX, A[i]);
         }

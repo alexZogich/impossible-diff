@@ -46,5 +46,5 @@ const ZERO = 0;
 module.exports = {
 	ZERO: ZERO,
 	A: matrixA,
-	M: M,
-}
+	M: M
+};
